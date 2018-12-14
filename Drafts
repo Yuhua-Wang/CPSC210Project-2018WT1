@@ -1,0 +1,18 @@
+try {
+                    newDate.setYear(yearfield.getText());
+                    newDate.setMonth(monthfield.getText());
+                    newDate.setDay(dayfield.getText());
+                } catch (GibberishInput gibberishInput) {
+                    frame.dispose();
+                    try {
+                        new TaskWindow(todolist,finished,calender,task);
+                        new NotificationWindow("Error", "Please Enter a valid Date");
+                    } catch (IOException e1) {
+                    }
+                } catch (NumberFormatException e1){
+                    try {
+                        frame.dispose();
+                        new TaskWindow(todolist,finished,calender,task);
+                        new NotificationWindow("Error", "Numerical");
+                    } catch (IOException e2) { }
+                }
